@@ -6,8 +6,6 @@ import numpy as np
 import cProfile
 
 boston = load_boston()
-X_train = boston.data
-X_test = boston.data
 X_train, X_test, y_train, y_test = train_test_split(boston.data,
                                                     boston.target,
                                                     test_size=0.25,
@@ -17,8 +15,17 @@ X_train, X_test, y_train, y_test = train_test_split(boston.data,
 mse_regressor = DecisionTreeRegressor(random_state=0)
 mae_regressor = DecisionTreeRegressor(random_state=0, criterion="mae")
 
-cProfile.run('mse_regressor.fit(X_train, y_train)')
-cProfile.run('mae_regressor.fit(X_train, y_train)')
+pr = cProfile.Profile()
+pr.enable()
+mse_regressor.fit(X_train, y_train)
+pr.disable()
+pr.print_stats(sort='time')
+
+pr = cProfile.Profile()
+pr.enable()
+mae_regressor.fit(X_train, y_train)
+pr.disable()
+pr.print_stats(sort='time')
 
 mse_predicted = mse_regressor.predict(X_test)
 mae_predicted = mae_regressor.predict(X_test)

@@ -44,11 +44,20 @@ X_train, y_train, X_test, y_test = generate_random_dataset(n_train,
                                                            n_features)
 
 # Fit regression model
-mse_regressor = DecisionTreeRegressor(random_state=0)
-mae_regressor = DecisionTreeRegressor(random_state=0, criterion="mae")
+mse_regressor = DecisionTreeRegressor(random_state=0, max_leaf_nodes = 100)
+mae_regressor = DecisionTreeRegressor(random_state=0, criterion="mae", max_leaf_nodes = 100)
 
-cProfile.run('mse_regressor.fit(X_train, y_train)')
-cProfile.run('mae_regressor.fit(X_train, y_train)')
+pr = cProfile.Profile()
+pr.enable()
+mse_regressor.fit(X_train, y_train)
+pr.disable()
+pr.print_stats(sort='time')
+
+pr = cProfile.Profile()
+pr.enable()
+mae_regressor.fit(X_train, y_train)
+pr.disable()
+pr.print_stats(sort='time')
 
 mse_predicted = mse_regressor.predict(X_test)
 mae_predicted = mae_regressor.predict(X_test)
