@@ -1,0 +1,181 @@
+Profiling MSE DecisionTreeRegressor
+         104 function calls in 5.380 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    5.375    5.375    5.375    5.375 {method 'build' of 'sklearn.tree._tree.DepthFirstTreeBuilder' objects}
+        8    0.004    0.000    0.004    0.000 {numpy.core.multiarray.array}
+        3    0.001    0.000    0.001    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+        1    0.000    0.000    5.380    5.380 tree.py:114(fit)
+        2    0.000    0.000    0.005    0.003 validation.py:271(check_array)
+        2    0.000    0.000    0.001    0.001 validation.py:49(_assert_all_finite)
+        1    0.000    0.000    0.000    0.000 validation.py:564(check_random_state)
+       17    0.000    0.000    0.000    0.000 {isinstance}
+        2    0.000    0.000    0.001    0.001 {method 'sum' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 shape_base.py:61(atleast_2d)
+        2    0.000    0.000    0.000    0.000 validation.py:132(_shape_repr)
+        4    0.000    0.000    0.000    0.000 abc.py:128(__instancecheck__)
+        2    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {hasattr}
+        5    0.000    0.000    0.000    0.000 validation.py:159(<genexpr>)
+        4    0.000    0.000    0.000    0.000 _weakrefset.py:70(__contains__)
+        4    0.000    0.000    0.000    0.000 numeric.py:484(asanyarray)
+       12    0.000    0.000    0.000    0.000 {len}
+        2    0.000    0.000    0.001    0.001 _methods.py:31(_sum)
+        7    0.000    0.000    0.000    0.000 {getattr}
+        2    0.000    0.000    0.000    0.000 validation.py:111(_num_samples)
+        1    0.000    0.000    0.000    0.000 shape_base.py:9(atleast_1d)
+        1    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 fromnumeric.py:2180(amax)
+        5    0.000    0.000    0.000    0.000 base.py:887(isspmatrix)
+        1    0.000    0.000    0.000    0.000 fromnumeric.py:128(reshape)
+        1    0.000    0.000    0.000    0.000 _methods.py:25(_amax)
+        1    0.000    0.000    0.000    0.000 {max}
+        2    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Profiling MAE DecisionTreeRegressor
+         104 function calls in 2397.884 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1 2397.876 2397.876 2397.876 2397.876 {method 'build' of 'sklearn.tree._tree.DepthFirstTreeBuilder' objects}
+        8    0.004    0.001    0.004    0.001 {numpy.core.multiarray.array}
+        1    0.003    0.003 2397.884 2397.884 tree.py:114(fit)
+        3    0.001    0.000    0.001    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+        2    0.000    0.000    0.006    0.003 validation.py:271(check_array)
+        2    0.000    0.000    0.001    0.001 validation.py:49(_assert_all_finite)
+       17    0.000    0.000    0.000    0.000 {isinstance}
+        2    0.000    0.000    0.000    0.000 validation.py:132(_shape_repr)
+        5    0.000    0.000    0.000    0.000 validation.py:159(<genexpr>)
+        1    0.000    0.000    0.000    0.000 shape_base.py:61(atleast_2d)
+        1    0.000    0.000    0.000    0.000 validation.py:564(check_random_state)
+        2    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {hasattr}
+        4    0.000    0.000    0.000    0.000 abc.py:128(__instancecheck__)
+        2    0.000    0.000    0.000    0.000 validation.py:111(_num_samples)
+        4    0.000    0.000    0.000    0.000 _weakrefset.py:70(__contains__)
+        4    0.000    0.000    0.000    0.000 numeric.py:484(asanyarray)
+        2    0.000    0.000    0.001    0.001 _methods.py:31(_sum)
+        1    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.001    0.001 {method 'sum' of 'numpy.ndarray' objects}
+        7    0.000    0.000    0.000    0.000 {getattr}
+        1    0.000    0.000    0.000    0.000 fromnumeric.py:2180(amax)
+       12    0.000    0.000    0.000    0.000 {len}
+        1    0.000    0.000    0.000    0.000 shape_base.py:9(atleast_1d)
+        5    0.000    0.000    0.000    0.000 base.py:887(isspmatrix)
+        1    0.000    0.000    0.000    0.000 fromnumeric.py:128(reshape)
+        1    0.000    0.000    0.000    0.000 _methods.py:25(_amax)
+        1    0.000    0.000    0.000    0.000 {max}
+        2    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Mean Squared Error of DecisionTreeRegressor Trained w/ MSE Criterion: 0.191689553815
+Mean Squared Error of DecisionTreeRegressor Trained w/ MAE Criterion: 0.155266240607
+Mean Absolute Error of DecisionTreeRegressor Trained w/ MSE Criterion: 0.341269295818
+Mean Absolute Error of DecisionTreeRegressor Trained w/ MAE Criterion: 0.314539697461
+
+Profiling MSE RandomForestRegressor
+         23068 function calls (22928 primitive calls) in 26.494 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       10   26.386    2.639   26.386    2.639 {method 'build' of 'sklearn.tree._tree.DepthFirstTreeBuilder' objects}
+       27    0.034    0.001    0.034    0.001 {numpy.core.multiarray.array}
+       20    0.013    0.001    0.013    0.001 {method 'randint' of 'mtrand.RandomState' objects}
+     2640    0.013    0.000    0.013    0.000 collections.py:71(__setitem__)
+       10    0.006    0.001    0.006    0.001 {numpy.core.multiarray.bincount}
+       10    0.003    0.000   26.410    2.641 forest.py:93(_parallel_build_trees)
+       12    0.003    0.000    0.003    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+       40    0.002    0.000    0.041    0.001 base.py:215(get_params)
+      240    0.002    0.000    0.016    0.000 _abcoll.py:548(update)
+      400    0.002    0.000    0.002    0.000 warnings.py:361(__enter__)
+      240    0.002    0.000    0.019    0.000 collections.py:50(__init__)
+    80/40    0.002    0.000    0.022    0.001 funcsigs.py:55(signature)
+       40    0.002    0.000    0.008    0.000 funcsigs.py:512(from_function)
+       80    0.002    0.000    0.006    0.000 funcsigs.py:474(__init__)
+       40    0.001    0.000    0.035    0.001 base.py:188(_get_param_names)
+      480    0.001    0.000    0.003    0.000 funcsigs.py:237(__init__)
+      160    0.001    0.000    0.002    0.000 collections.py:125(items)
+       10    0.001    0.000    0.001    0.000 {numpy.core.multiarray.copyto}
+      160    0.001    0.000    0.018    0.000 funcsigs.py:585(parameters)
+     3360    0.001    0.000    0.001    0.000 collections.py:90(__iter__)
+      120    0.001    0.000    0.001    0.000 collections.py:121(values)
+      251    0.001    0.000    0.001    0.000 abc.py:128(__instancecheck__)
+   110/10    0.001    0.000    0.024    0.002 base.py:36(clone)
+       10    0.001    0.000   26.387    2.639 tree.py:114(fit)
+      691    0.001    0.000    0.001    0.000 _weakrefset.py:70(__contains__)
+      440    0.001    0.000    0.001    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+      520    0.001    0.000    0.001    0.000 {hasattr}
+      400    0.001    0.000    0.001    0.000 warnings.py:96(simplefilter)
+     1079    0.001    0.000    0.002    0.000 {isinstance}
+      440    0.001    0.000    0.001    0.000 re.py:230(_compile)
+      994    0.001    0.000    0.001    0.000 {getattr}
+       21    0.001    0.000    0.001    0.000 validation.py:564(check_random_state)
+      440    0.001    0.000    0.002    0.000 re.py:138(match)
+      400    0.000    0.000    0.000    0.000 warnings.py:377(__exit__)
+        1    0.000    0.000   26.494   26.494 forest.py:214(fit)
+      400    0.000    0.000    0.000    0.000 warnings.py:340(__init__)
+     1720    0.000    0.000    0.000    0.000 funcsigs.py:266(name)
+      100    0.000    0.000    0.001    0.000 copy.py:145(deepcopy)
+      480    0.000    0.000    0.000    0.000 funcsigs.py:506(<genexpr>)
+      240    0.000    0.000    0.001    0.000 abc.py:148(__subclasscheck__)
+      100    0.000    0.000    0.000    0.000 copy.py:267(_keep_alive)
+     1240    0.000    0.000    0.000    0.000 funcsigs.py:278(kind)
+       11    0.000    0.000   26.412    2.401 parallel.py:596(dispatch_one_batch)
+       10    0.000    0.000    0.000    0.000 {cPickle.dumps}
+       20    0.000    0.000    0.019    0.001 base.py:252(set_params)
+       10    0.000    0.000    0.035    0.004 base.py:70(_make_estimator)
+     1136    0.000    0.000    0.000    0.000 {len}
+      400    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+      410    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+       40    0.000    0.000    0.000    0.000 funcsigs.py:282(replace)
+      120    0.000    0.000    0.000    0.000 {setattr}
+      680    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       10    0.000    0.000    0.001    0.000 parallel.py:144(delayed)
+        1    0.000    0.000   26.412   26.412 parallel.py:759(__call__)
+       10    0.000    0.000   26.411    2.641 parallel.py:554(_dispatch)
+       40    0.000    0.000    0.000    0.000 {sorted}
+       40    0.000    0.000    0.003    0.000 funcsigs.py:596(replace)
+       10    0.000    0.000   26.411    2.641 parallel.py:71(__call__)
+      472    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 parallel.py:416(__init__)
+       11    0.000    0.000    0.001    0.000 parallel.py:67(__init__)
+       10    0.000    0.000    0.000    0.000 fromnumeric.py:2180(amax)
+       11    0.000    0.000    0.000    0.000 shape_base.py:9(atleast_1d)
+        2    0.000    0.000    0.037    0.019 validation.py:271(check_array)
+       30    0.000    0.000    0.000    0.000 six.py:437(iteritems)
+      123    0.000    0.000    0.000    0.000 base.py:887(isspmatrix)
+       10    0.000    0.000    0.000    0.000 functools.py:17(update_wrapper)
+       90    0.000    0.000    0.000    0.000 base.py:77(<genexpr>)
+       11    0.000    0.000    0.001    0.000 forest.py:317(<genexpr>)
+      240    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       90    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 parallel.py:714(retrieve)
+       10    0.000    0.000    0.000    0.000 {numpy.core.multiarray.empty}
+       10    0.000    0.000    0.000    0.000 tree.py:910(__init__)
+       10    0.000    0.000   26.411    2.641 parallel.py:177(__init__)
+      300    0.000    0.000    0.000    0.000 {id}
+       10    0.000    0.000    0.000    0.000 tree.py:81(__init__)
+       10    0.000    0.000    0.001    0.000 numeric.py:148(ones)
+        2    0.000    0.000    0.003    0.001 validation.py:49(_assert_all_finite)
+       10    0.000    0.000    0.013    0.001 forest.py:76(_generate_sample_indices)
+        1    0.000    0.000    0.000    0.000 parallel.py:483(_initialize_pool)
+       14    0.000    0.000    0.000    0.000 numeric.py:484(asanyarray)
+        1    0.000    0.000    0.000    0.000 parallel.py:471(_effective_n_jobs)
+       10    0.000    0.000    0.000    0.000 functools.py:39(wraps)
+        1    0.000    0.000    0.000    0.000 shape_base.py:61(atleast_2d)
+        1    0.000    0.000    0.000    0.000 logger.py:39(short_format_time)
+      100    0.000    0.000    0.000    0.000 copy.py:198(_deepcopy_atomic)
+       10    0.000    0.000    0.000    0.000 parallel.py:92(_verbosity_filter)
+        1    0.000    0.000    0.000    0.000 disk.py:34(memstr_to_kbytes)
+        1    0.000    0.000    0.000    0.000 fromnumeric.py:128(reshape)
+        2    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 base.py:55(_validate_estimator)
+        5    0.000    0.000    0.000    0.000 validation.py:159(<genexpr>)
+       31    0.000 
