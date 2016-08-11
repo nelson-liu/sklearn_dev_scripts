@@ -30,8 +30,8 @@ dt_mae_regressor.fit(X_train, y_train)
 pr.disable()
 pr.print_stats(sort='time')
 
-dt_mse_predicted = dt_mse_regressor.predict(X_test)
-dt_mae_predicted = dt_mae_regressor.predict(X_test)
+dt_mse_predicted = dt_mse_regressor.predict(X_train)
+dt_mae_predicted = dt_mae_regressor.predict(X_train)
 
 dt_mse_mse = mean_squared_error(y_test, dt_mse_predicted)
 dt_mae_mse = mean_squared_error(y_test, dt_mae_predicted)
@@ -66,69 +66,14 @@ rf_mae_regressor.fit(X_train, y_train)
 pr.disable()
 pr.print_stats(sort='time')
 
-rf_mse_predicted = rf_mse_regressor.predict(X_test)
-rf_mae_predicted = rf_mae_regressor.predict(X_test)
+rf_mse_predicted = rf_mse_regressor.predict(X_train)
+rf_mae_predicted = rf_mae_regressor.predict(X_train)
 
 rf_mse_mse = mean_squared_error(y_test, rf_mse_predicted)
 rf_mae_mse = mean_squared_error(y_test, rf_mae_predicted)
 print("Mean Squared Error of RandomForestRegressor "
       "Trained w/ MSE Criterion: {}").format(rf_mse_mse)
 print("Mean Squared Error of RandomForestRegressor "
-      "Trained w/ MAE Criterion: {}").format(rf_mae_mse)
-
-rf_mse_mae = mean_absolute_error(y_test, rf_mse_predicted)
-rf_mae_mae = mean_absolute_error(y_test, rf_mae_predicted)
-print("Mean Absolute Error of RandomForestRegressor "
-      "Trained w/ MSE Criterion: {}").format(rf_mse_mae)
-print("Mean Absolute Error of RandomForestRegressor "
-      "Trained w/ MAE Criterion: {}").format(rf_mae_mae)
-print("")
-
-# Fit GradientBoostingRegressor regression model####################################
-gb_mse_regressor = GradientBoostingRegressor(random_state=0)
-gb_mae_regressor = GradientBoostingRegressor(random_state=0, criterion="mae")
-
-print "Profiling Friedman MSE GradientBoostingRegressor"
-pr = cProfile.Profile()
-pr.enable()
-gb_mse_regressor.fit(X_train, y_train)
-pr.disable()
-pr.print_stats(sort='time')
-
-print "Profiling MAE GradientBoostingRegressor"
-pr = cProfile.Profile()
-pr.enable()
-gb_mae_regressor.fit(X_train, y_train)
-pr.disable()
-pr.print_stats(sort='time')
-
-gb_mse_predicted = gb_mse_regressor.predict(X_test)
-gb_mae_predicted = gb_mae_regressor.predict(X_test)
-
-gb_mse_mse = mean_squared_error(y_test, gb_mse_predicted)
-gb_mae_mse = mean_squared_error(y_test, gb_mae_predicted)
-print("Mean Squared Error of GradientBoostingRegressor "
-      "Trained w/ Friedman MSE Criterion: {}").format(gb_mse_mse)
-print("Mean Squared Error of GradientBoostingRegressor "
-      "Trained w/ MAE Criterion: {}").format(gb_mae_mse)
-
-gb_mse_mae = mean_absolute_error(y_test, gb_mse_predicted)
-gb_mae_mae = mean_absolute_error(y_test, gb_mae_predicted)
-print("Mean Absolute Error of GradientBoostingRegressor "
-      "Trained w/ Friedman MSE Criterion: {}").format(gb_mse_mae)
-print("Mean Absolute Error of GradientBoostingRegressor "
-      "Trained w/ MAE Criterion: {}").format(gb_mae_mae)
-print("")
-
-# Fit ExtraTreesRegressor regression model####################################
-et_mse_regressor = ExtraTreesRegressor(random_state=0)
-et_mae_regressor = ExtraTreesRegressor(random_state=0, criterion="mae")
-
-print "Profiling MSE ExtraTreesRegressor"
-pr = cProfile.Profile()
-pr.enable()
-et_mse_regressor.fit(X_train, y_train)
-pr.disable()
 pr.print_stats(sort='time')
 
 print "Profiling MAE ExtraTreesRegressor"
@@ -138,8 +83,8 @@ et_mae_regressor.fit(X_train, y_train)
 pr.disable()
 pr.print_stats(sort='time')
 
-et_mse_predicted = et_mse_regressor.predict(X_test)
-et_mae_predicted = et_mae_regressor.predict(X_test)
+et_mse_predicted = et_mse_regressor.predict(X_train)
+et_mae_predicted = et_mae_regressor.predict(X_train)
 
 et_mse_mse = mean_squared_error(y_test, et_mse_predicted)
 et_mae_mse = mean_squared_error(y_test, et_mae_predicted)
